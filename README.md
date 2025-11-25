@@ -53,6 +53,13 @@ docker exec -it confluence-docker-sandbox-confluence-1 bash
 tail -f /var/atlassian/application-data/confluence/logs/atlassian-confluence.log
 ```
 
+### Access Confluence
+Once the container is running, open:
+
+http://localhost:8090
+
+You should see the Confluence setup wizard or your restored instance.
+
 ### Stop Confluence
 ```
 ./stop.sh
