@@ -47,6 +47,12 @@ confluence-docker-sandbox/
 ./run.sh
 ```
 
+### Check Confluence log
+```
+docker exec -it confluence-docker-sandbox-confluence-1 bash
+tail -f /var/atlassian/application-data/confluence/logs/atlassian-confluence.log
+```
+
 ### Stop Confluence
 ```
 ./stop.sh
