@@ -7,8 +7,8 @@ Useful for testing, plugin development, data generation, and verification before
 
 ## Features
 
-- Confluence Data Center (official Docker image)
-- PostgreSQL 16
+- Confluence Data Center (official Docker image): https://hub.docker.com/r/atlassian/confluence
+- PostgreSQL: https://hub.docker.com/_/postgres
 - Persistent Docker volumes
 - Utility scripts:
   - run.sh — Start Confluence + PostgreSQL
