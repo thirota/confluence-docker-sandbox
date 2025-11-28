@@ -60,6 +60,10 @@ http://localhost:8090
 
 You should see the Confluence setup wizard or your restored instance.
 
+You can get a license for testing here:
+
+https://developer.atlassian.com/platform/marketplace/timebomb-licenses-for-testing-server-apps/
+
 ### Stop Confluence
 ```
 ./stop.sh
