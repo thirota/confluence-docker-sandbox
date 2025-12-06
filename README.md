@@ -94,6 +94,13 @@ https://developer.atlassian.com/platform/marketplace/timebomb-licenses-for-testi
 
 ---
 
+## Reference Links
+
+- Confluence Release Notes: https://confluence.atlassian.com/doc/confluence-release-notes-327.html
+- Atlassian End of Support Policy: https://confluence.atlassian.com/support/atlassian-end-of-support-policy-201851003.html
+
+---
+
 ## Acknowledgements
 
 This repository was originally forked from:  
