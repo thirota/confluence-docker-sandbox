@@ -12,6 +12,7 @@ Useful for testing, plugin development, data generation, and verification before
 - Persistent Docker volumes
 - Utility scripts:
   - run.sh — Start Confluence + PostgreSQL
+  - open.sh — Open Confluence in browser
   - stop.sh — Stop running containers
   - reset.sh — Remove volumes (dangerous)
   - backup.sh — Backup Confluence & PostgreSQL volumes
@@ -24,6 +25,7 @@ Useful for testing, plugin development, data generation, and verification before
 confluence-docker-sandbox/  
 ├── docker-compose.yml       # Confluence + PostgreSQL environment  
 ├── run.sh                   # Start services  
+├── open.sh                  # Open Confluence in browser  
 ├── stop.sh                  # Stop services  
 ├── reset.sh                 # Reset volumes (dangerous)  
 ├── backup.sh                # Backup volumes  
@@ -54,10 +56,10 @@ tail -f /var/atlassian/application-data/confluence/logs/atlassian-confluence.log
 ```
 
 ### Access Confluence
-Once the container is running, open:
-
-http://localhost:8090
-
+Once the container is running, execute:
+```
+./open.sh
+```
 You should see the Confluence setup wizard or your restored instance.
 
 You can get a license for testing here:
