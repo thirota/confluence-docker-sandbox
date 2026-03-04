@@ -1,6 +1,6 @@
 services:
   confluence:
-    image: atlassian/confluence:10.2.6
+    image: atlassian/confluence:10.2.7
     environment:
       - JVM_SUPPORT_RECOMMENDED_ARGS=
       - ATL_DB_TYPE=postgresql
