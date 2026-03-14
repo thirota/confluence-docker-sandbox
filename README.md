@@ -12,6 +12,7 @@ Useful for testing, plugin development, data generation, and verification before
 - Persistent Docker volumes
 - Utility scripts:
   - run.sh — Start Confluence + PostgreSQL
+  - logs.sh — Check Confluence logs
   - open.sh — Open Confluence in browser
   - stop.sh — Stop running containers
   - reset.sh — Remove volumes (dangerous)
@@ -25,6 +26,7 @@ Useful for testing, plugin development, data generation, and verification before
 confluence-docker-sandbox/  
 ├── docker-compose.yml       # Confluence + PostgreSQL environment  
 ├── run.sh                   # Start services  
+├── logs.sh                  # Check Confluence logs  
 ├── open.sh                  # Open Confluence in browser  
 ├── stop.sh                  # Stop services  
 ├── reset.sh                 # Reset volumes (dangerous)  
@@ -51,8 +53,7 @@ confluence-docker-sandbox/
 
 ### Check Confluence log
 ```
-docker exec -it confluence-docker-sandbox-confluence-1 bash
-tail -f /var/atlassian/application-data/confluence/logs/atlassian-confluence.log
+./logs.sh
 ```
 
 ### Access Confluence
