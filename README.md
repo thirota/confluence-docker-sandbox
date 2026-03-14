@@ -71,10 +71,11 @@ https://developer.atlassian.com/platform/marketplace/timebomb-licenses-for-testi
 ./stop.sh
 ```
 
-### Reset all volumes (dangerous)
+### Reset all volumes (with confirmation)
 ```
 ./reset.sh
 ```
+This script will prompt for confirmation before deleting all Docker volumes associated with the sandbox.
 
 ### Backup volumes
 ```
