@@ -110,3 +110,15 @@ This script will prompt for confirmation before deleting all Docker volumes asso
 This repository was originally forked from:  
 https://github.com/collabsoft-net/example-confluence-app-with-docker-compose  
 Thanks to the original authors for providing a helpful baseline.
+
+---
+
+## License
+
+Original work and modifications authored by Takayuki Hirota in this repository
+are licensed under the [MIT License](LICENSE).
+
+This license grant applies only to those contributions. It does not relicense
+material authored by others, including material from the original repository
+or third-party certificates. Third-party software used by this project,
+including Confluence and PostgreSQL, remains subject to its respective licenses.
