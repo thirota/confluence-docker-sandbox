@@ -1,6 +1,6 @@
 services:
   confluence:
-    image: atlassian/confluence:11.0.0-rc2
+    image: atlassian/confluence:11.0.0
     environment:
       - JVM_SUPPORT_RECOMMENDED_ARGS=-Dupm.plugin.upload.enabled=true -Datlassian.upm.signature.check.disabled=true
       - ATL_DB_TYPE=postgresql
@@ -16,7 +16,7 @@ services:
       - confluence_data:/var/atlassian/application-data/confluence
 
   postgres:
-    image: postgres:16
+    image: postgres:17
     environment:
       - POSTGRES_USER=confluence
       - POSTGRES_PASSWORD=confluence
