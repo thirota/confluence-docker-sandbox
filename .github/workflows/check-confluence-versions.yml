@@ -1,0 +1,47 @@
+name: Check Confluence versions
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 09:00 JST on the first day of every month
+    - cron: "0 0 1 * *"
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Check Docker Hub for updates
+        id: versions
+        run: python3 scripts/check-confluence-versions.py
+
+      - name: Create or update notification issue
+        if: steps.versions.outputs.has_updates == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPORT: ${{ steps.versions.outputs.report }}
+          TITLE: Confluence image updates available
+        run: |
+          issue_number="$(gh issue list --state open --search "${TITLE} in:title" --json number,title --jq ".[] | select(.title == \"${TITLE}\") | .number" | head -n 1)"
+          if [ -n "$issue_number" ]; then
+            gh issue edit "$issue_number" --body "$REPORT"
+          else
+            gh issue create --title "$TITLE" --body "$REPORT"
+          fi
+
+      - name: Close resolved notification issue
+        if: steps.versions.outputs.has_updates == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TITLE: Confluence image updates available
+        run: |
+          issue_number="$(gh issue list --state open --search "${TITLE} in:title" --json number,title --jq ".[] | select(.title == \"${TITLE}\") | .number" | head -n 1)"
+          if [ -n "$issue_number" ]; then
+            gh issue close "$issue_number" --comment "各リリース系列が最新版になったため、自動的にクローズします。"
+          fi
